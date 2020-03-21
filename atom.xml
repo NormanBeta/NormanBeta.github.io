@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://NormanBeta.github.io</id>
     <title>Gridea</title>
-    <updated>2020-03-20T14:23:26.364Z</updated>
+    <updated>2020-03-21T10:15:07.546Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://NormanBeta.github.io"/>
     <link rel="self" href="https://NormanBeta.github.io/atom.xml"/>
@@ -10,6 +10,18 @@
     <logo>https://NormanBeta.github.io/images/avatar.png</logo>
     <icon>https://NormanBeta.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[FaceFace2Face: Real-time Face Capture and Reenactment of RGB Videos]]></title>
+        <id>https://NormanBeta.github.io/post/faceface2face-real-time-face-capture-and-reenactment-of-rgb-videos/</id>
+        <link href="https://NormanBeta.github.io/post/faceface2face-real-time-face-capture-and-reenactment-of-rgb-videos/">
+        </link>
+        <updated>2020-03-21T07:40:43.000Z</updated>
+        <content type="html"><![CDATA[<p>1.简介<br>
+近年来，已经证明了基于商品传感器的实时无标记面部性能捕获。基于RGB [8，6]以及RGB-D数据[31，10，21，4，16]，都获得了令人印象深刻的结果。对于视频游戏和电影中的虚拟CG头像的动画，这些技术已变得越来越流行。现在，可以在家中运行这些面部捕捉和跟踪算法，这是许多VR和AR应用程序（例如电话会议）的基础。<br>
+在本文中，我们采用了一种基于单眼RGB数据的新型密集无标记人脸表现捕获方法，与最新方法类似。但是，我们的主要贡献不是实时将面部表情转换为虚拟CG角色，而是实时进行单眼面部重现。与以前离线运行的重新制定方法[5、11、13]相比，我们的目标是将由RGB传感器捕获的源演员的面部表情在线传输到目标演员。目标序列可以是任何单眼视频；例如，从YouTube下载的具有面部表情的旧视频素材。我们的目标是以逼真的方式修改目标视频，从而几乎不可能注意到这些操作。真实的逼真的面部重现是各种应用的基础。例如，在视频会议中，可以将视频源调整为与翻译人员的面部动作匹配，或者可以令人信服地将面部视频配音为外语。<br>
+在我们的方法中，我们首先基于预先记录的训练序列，使用新的基于全局非刚性模型的捆绑方法来重建目标演员的形状身份。由于此预处理是在一组训练框架上全局执行的，因此我们可以解决几何歧义</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://NormanBeta.github.io/post/hello-gridea/</id>

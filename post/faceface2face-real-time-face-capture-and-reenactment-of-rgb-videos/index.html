@@ -1,0 +1,319 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FaceFace2Face: Real-time Face Capture and Reenactment of RGB Videos | Felix Feng 的博客</title>
+<meta name="description" content="温故而知新" />
+<link rel="shortcut icon" href="https://NormanBeta.github.io/favicon.ico">
+<link rel="stylesheet" href="https://NormanBeta.github.io/styles/main.css">
+
+<script src="https://NormanBeta.github.io/media/js/jquery.min.js"></script>
+<script src="https://NormanBeta.github.io/media/js/masonry.pkgd.min.js"></script>
+<script src="https://NormanBeta.github.io/media/js/aos.js"></script>
+<script src="https://NormanBeta.github.io/media/js/pace.min.js"></script>
+<script src="https://NormanBeta.github.io/media/js/view-image.min.js"></script>
+<script src="https://NormanBeta.github.io/media/js/jquery.magnific-popup.min.js"></script>
+<script src="https://NormanBeta.github.io/media/js/functions.js"></script>
+    <meta name="referrer" content="never">
+    <meta name="description" content="1.简介
+近年来，已经证明了基于商品传感器的实时无标记面部性能捕获。基于RGB [8，6]以及RGB-D数据[31，10，21，4，16]，都获得了令人印象深刻的结果。对于视频游戏和电影中的虚拟CG头像的动画，这些技术已变得越来越流行。现在..." />
+    <meta name="keywords" content="" />
+    <script src="https://NormanBeta.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://NormanBeta.github.io/media/js/prism.min.js"></script>
+  </head>
+  <body>
+            <header id="header" class="grid-container">
+        <!-- start: .menu-wrapper -->
+        <div class="menu-mobile"> 
+          <i class="fa fa-reorder"></i>
+        </div>
+        <div class="menu-wrapper">
+          <div class="">
+            <div class="logo">
+              <a href="https://NormanBeta.github.io"><img src="/media/images/logoo.png" alt=""></a>
+            </div>
+            <!-- start: .main-nav -->
+
+            <nav class="main-nav grid-container grid-parent">
+              <ul id="menu-header" class="menu gradient-effect">
+                <li class=""><a href="https://NormanBeta.github.io" class="menu">首页</a></li>
+                
+                  <li class="" >
+                    <a href="/archives" class="menu">
+                      归档
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/tags" class="menu">
+                      标签
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/post/about" class="menu">
+                      关于
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="diet" class="menu">
+                      每日食谱
+                    </a>
+                  </li>
+                
+                <li class="search-menu-item hide-on-mobile hide-on-tablet"><a href="#search-lightbox" class="lightbox mfp-inline"><i class="fa fa-search-line"></i></a></li>
+              </ul>
+            </nav>
+            <a href="#search-lightbox" class="lightbox epcl-search-button mfp-inline hide-on-tablet hide-on-desktop"><i class="fa fa-search-line"></i></a>
+            <!-- end: .main-nav -->
+            <div class="clear"></div>
+            <div class="border hide-on-tablet hide-on-mobile"></div>
+          </div>    
+          <div class="clear"></div>
+        </div>
+        <!-- end: .menu-wrapper -->
+        <div class="clear"></div>
+      </header>
+      <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
+        <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
+          <div class="search-wrapper section">
+            <form id="gridea-search-form" data-update="1692691677543" action="/search/index.html" class="search-form" _lpchecked="1">
+              <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
+              <button type="submit" class="submit" aria-label="Submit">
+                <i class="fa fa-search-line"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('/media/images/gridea.jpg');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-03-21"><i class="fa fa-calendar"></i><span class="lately">3 年前</span></time>
+              
+              <a href="https://NormanBeta.github.io/post/faceface2face-real-time-face-capture-and-reenactment-of-rgb-videos/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/faceface2face-real-time-face-capture-and-reenactment-of-rgb-videos/"> </span>
+              </a>
+              <span id="/faceface2face-real-time-face-capture-and-reenactment-of-rgb-videos/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+              </div>
+              <h1 class="title ularge white bold">FaceFace2Face: Real-time Face Capture and Reenactment of RGB Videos</h1>
+            </div>
+          </div>
+        </div>  
+
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <p>1.简介<br>
+近年来，已经证明了基于商品传感器的实时无标记面部性能捕获。基于RGB [8，6]以及RGB-D数据[31，10，21，4，16]，都获得了令人印象深刻的结果。对于视频游戏和电影中的虚拟CG头像的动画，这些技术已变得越来越流行。现在，可以在家中运行这些面部捕捉和跟踪算法，这是许多VR和AR应用程序（例如电话会议）的基础。<br>
+在本文中，我们采用了一种基于单眼RGB数据的新型密集无标记人脸表现捕获方法，与最新方法类似。但是，我们的主要贡献不是实时将面部表情转换为虚拟CG角色，而是实时进行单眼面部重现。与以前离线运行的重新制定方法[5、11、13]相比，我们的目标是将由RGB传感器捕获的源演员的面部表情在线传输到目标演员。目标序列可以是任何单眼视频；例如，从YouTube下载的具有面部表情的旧视频素材。我们的目标是以逼真的方式修改目标视频，从而几乎不可能注意到这些操作。真实的逼真的面部重现是各种应用的基础。例如，在视频会议中，可以将视频源调整为与翻译人员的面部动作匹配，或者可以令人信服地将面部视频配音为外语。<br>
+在我们的方法中，我们首先基于预先记录的训练序列，使用新的基于全局非刚性模型的捆绑方法来重建目标演员的形状身份。由于此预处理是在一组训练框架上全局执行的，因此我们可以解决几何歧义</p>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://NormanBeta.github.io/post-images/hello-gridea.png');"></div>
+                 <a href="https://NormanBeta.github.io/post/hello-gridea/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2018-12-12">2018-12-12</time>
+                  <h4 class="title white no-margin">Hello Gridea</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://NormanBeta.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
+            
+              <div id="comments" class="bg-white hosted ">
+                <div class="clear"></div>
+<script>
+jQuery(document).ready(function($){
+    $('.vemoji-btn').text('😀');
+    $("#comments").on('click', 'span.vat',function(){
+        $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+        $('textarea#veditor').focus();
+    })
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+            if ($(window.location.hash).length) {
+                $('html, body').animate({scrollTop: $(window.location.hash).offset().top-200}, 600);
+                clearInterval(checkExist);
+            }
+        }, 100);
+    }
+})
+</script>
+
+              </div>
+            
+
+            </div>
+          </div>
+      </main>
+
+          <footer id="footer" class="grid-container">
+        <div class="widgets row gradient-effect">
+            <div class="default-sidebar border-effect">
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_epcl_posts_thumbs underline-effect">
+                  <h4 class="widget-title title white bordered">最新文章</h4>
+                  
+                  
+                  <article class="item post-0 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://NormanBeta.github.io/post/faceface2face-real-time-face-capture-and-reenactment-of-rgb-videos/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('/media/images/gridea.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-03-21">2020-03-21</time>
+                      <h4 class="title usmall">
+                        <a href="https://NormanBeta.github.io/post/faceface2face-real-time-face-capture-and-reenactment-of-rgb-videos/">FaceFace2Face: Real-time Face Capture and Reenactment of RGB Videos</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://NormanBeta.github.io/post/about/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('/media/images/gridea.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2019-01-25">2019-01-25</time>
+                      <h4 class="title usmall">
+                        <a href="https://NormanBeta.github.io/post/about/">关于</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://NormanBeta.github.io/post/hello-gridea/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://NormanBeta.github.io/post-images/hello-gridea.png');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2018-12-12">2018-12-12</time>
+                      <h4 class="title usmall">
+                        <a href="https://NormanBeta.github.io/post/hello-gridea/">Hello Gridea</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  <div class="clear"></div>
+                </section>
+              </div>
+
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_tag_cloud underline-effect">
+                  <h4 class="widget-title title white bordered">标签云</h4>
+                  <div class="tagcloud">
+                    
+                      <a href="https://NormanBeta.github.io/tag/xtBksilc1/" class="ctag ctag-0 ctag-xtBksilc1" aria-label="">Gridea</a>
+                    
+                  </div>
+                  <div class="clear"></div>
+                </section>
+              </div>
+
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="epcl_about-2" class="widget widget_epcl_about underline-effect">
+                  <h4 class="widget-title title white bordered">关于我</h4>
+                  <div class="avatar">
+                    <a href="" class="translate-effect thumb"><span class="fullimage cover" style="background-image: url(https://NormanBeta.github.io/images/avatar.png);"></span></a>
+                  </div>
+                  <div class="info">
+                    <h4 class="title small author-name gradient-effect no-margin"><a href="">Felix Feng 的博客</a></h4>
+                    <p class="founder">温故而知新</p>
+                    <div class="social">
+                      
+                          
+                            <a href="https://github.com/normanbeta" class="translate-effect" target="_blank"><i class="fa fa-github"></i></a>
+                        
+                      
+                          
+                            <a href="582257402" class="translate-effect" target="_blank"><i class="fa fa-twitter"></i></a>
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                    </div> 
+                  </div>
+                  <div class="clear"></div>
+                  </section>
+              </div>
+
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="logo">
+          <a href="https://NormanBeta.github.io"><img src="/media/images/gridea.png" alt=""></a>
+        </div>
+        <p class="published border-effect">
+          ©2019 共 3 篇文章
+          <br/>
+          Theme <a href="https://gridea.dev/" target="_blank">「breek」</a> Powered by <a href="https://gridea.dev/" target="_blank">「Gridea」</a>
+        </p>
+        
+        <a href="javascript:void(0)" id="back-to-top" class="epcl-button dark" style="display:none">
+          <i class="fa fa-arrow"></i>
+        </a>
+    </footer>
+    
+    <div class="clear"></div>
+
+        
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/valine/1.3.10/Valine.Pure.min.js"></script>
+<script>
+    new Valine({
+        el: '#comments',
+        appId: 'M0GcasIvxuVDkqmmQbwKHjIk-gzGzoHsz' ,
+        appKey: 'fDJfY0ej7ihzXITWmqPYhjxo',
+        pageSize: 30,
+        placeholder: '既然来了，那就留个痕迹吧~',
+        visitor: true // 阅读量统计
+    })
+</script>
+    
+
+      
+    <script src="https://NormanBeta.github.io/media/js/functions-post.js"></script>
+
+    </div>
+    <!-- end: #wrapper -->
+  </body>
+</html>
